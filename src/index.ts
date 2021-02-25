@@ -57,7 +57,9 @@ function main() {
     for (let i = 0; i < list.length; i++) {
       const element = list[i];
       const [x, y] = element.split("\t");
-      const normalized = normalize(Number(y), yMin, yMax);
+      const normalized = normalize(Number(y), yMin, yMax)
+        .toString()
+        .replace(".", ",");
       output += normalized;
       if (i < list.length - 1) output += "\n";
     }
